@@ -1,4 +1,5 @@
 "use client"
+import './globals.css'; 
 
 import React from "react";
 import { Amplify } from "aws-amplify";
