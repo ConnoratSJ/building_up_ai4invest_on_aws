@@ -13,7 +13,6 @@ export default function Navbar() {
         AI<span className="text-white">4</span>INVEST
       </div>
       <div className="flex items-center gap-4">
-        <Link href="/" className="text-sm">Home</Link>
         <button onClick={signOut} className="text-xs text-red-400 hover:text-red-300">Log out</button>
       </div>
     </nav>
