@@ -1,9 +1,14 @@
 'use client';
 import Link from 'next/link';
-import { useAuthenticator } from "@aws-amplify/ui-react";
+import { Amplify } from 'aws-amplify';
+import React from 'react';
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
 
 export default function Navbar() {
-  const { signOut } = useAuthenticator();
+  const { signOut, user } = useAuthenticator();
 
   return (
     <nav >
@@ -11,8 +16,9 @@ export default function Navbar() {
         AI<span>4</span>INVEST
       </div>
       <div >
-            <button onClick={signOut} className="text-xs text-red-400 hover:text-red-300">Log out</button>
-      </div>
+          <h1>Hello {user.username}</h1>
+          <button onClick={signOut}>Sign out</button>
+        </div>
     </nav>
   );
 }

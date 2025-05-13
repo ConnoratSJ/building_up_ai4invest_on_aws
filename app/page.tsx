@@ -18,11 +18,8 @@ const client = generateClient<Schema>();
 
 export default function FormPage() {
   
-  const { signOut } = useAuthenticator();
-
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    username:"",
     "Age Group": '',
     "Ethnicity": '',
     "Education Level": '',
@@ -56,17 +53,7 @@ export default function FormPage() {
           <div>
             <h2>Create your investment profile</h2>
 
-            {step === 1 && (
-              <>
-                <div>
-                  <label>Username</label>
-                  <input name="username" value={formData.username} onChange={handleChange}/>
-                </div>
-                <button onClick={() => setStep(2)}>Next</button>
-              </>
-            )}
-
-          {step === 2 && (
+          {step === 1 && (
             <>
               <div>
                 <label >Age Group</label>
@@ -119,11 +106,11 @@ export default function FormPage() {
                 </select>  
             </div>
   
-            <button onClick={() => setStep(3)} >Next</button>
+            <button onClick={() => setStep(2)} >Next</button>
 
             </>
           )}
-          {step === 3 && (
+          {step === 2 && (
             <>
             <div>
               <label >Approximate annual household income</label>
@@ -205,10 +192,10 @@ export default function FormPage() {
                 <option value="99">Prefer not to say</option>
               </select>
               </div>
-              <button onClick={() => setStep(4)} >Next</button>
+              <button onClick={() => setStep(3)} >Next</button>
             </>
           )}  
-          {step === 4 && (
+          {step === 3 && (
             <>
             <div>
               <label >Do you have a checking account?</label>
@@ -285,10 +272,10 @@ export default function FormPage() {
             </select>
             </div>   
 
-              <button onClick={() => setStep(5)} >Next</button>
+              <button onClick={() => setStep(4)} >Next</button>
             </>
           )}  
-          {step === 5 && (
+          {step === 4 && (
             <>
             <div>
               <label >Satisfaction with current personal financial condition</label>
