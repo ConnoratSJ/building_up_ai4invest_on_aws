@@ -8,7 +8,7 @@ Amplify.configure(awsExports);
 
 
 export default function Navbar() {
-  const { signOut, user } = useAuthenticator();
+  const { signOut } = useAuthenticator();
 
   return (
     <nav >
@@ -16,7 +16,6 @@ export default function Navbar() {
         AI<span>4</span>INVEST
       </div>
       <div >
-          <h1>Hello {user.username}</h1>
           <button onClick={signOut}>Sign out</button>
         </div>
     </nav>
