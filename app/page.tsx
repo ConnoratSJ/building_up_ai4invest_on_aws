@@ -8,7 +8,7 @@ import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 //import "@aws-amplify/ui-react/styles.css";
 import { useAuthenticator } from "@aws-amplify/ui-react";
-
+import './globals.css'; 
 Amplify.configure(outputs);
 
 const client = generateClient<Schema>();
