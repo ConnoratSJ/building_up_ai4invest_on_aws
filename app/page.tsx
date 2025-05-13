@@ -19,9 +19,7 @@ export default function FormPage() {
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    email: "",
     username:"",
-    password: "",
     "Age Group": '',
     "Ethnicity": '',
     "Education Level": '',
@@ -50,6 +48,7 @@ export default function FormPage() {
 
   return (
     <main>
+      <button onClick={signOut}>Sign out</button>
       <div className="min-h-screen bg-gray-50 font-sans">
       <div className="flex justify-center">
         <div className="w-full max-w-md bg-white p-6 border rounded-lg shadow-md text-black mt-16">
@@ -57,12 +56,8 @@ export default function FormPage() {
 
           {step === 1 && (
             <>
-              <label className="block mb-2">Email</label>
-              <input name="email" value={formData.email} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
               <label className="block mb-2">Username</label>
               <input name="username" value={formData.username} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
-              <label className="block mb-2">Password</label>
-              <input name="password" type="password" value={formData.password} onChange={handleChange} className="w-full mb-6 p-2 border rounded" />
               <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
             </>
           )}
