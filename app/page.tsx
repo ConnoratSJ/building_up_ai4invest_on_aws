@@ -48,7 +48,6 @@ export default function FormPage() {
 
   return (
     <main>
-      <button onClick={signOut}>Sign out</button>
       <div className="min-h-screen bg-gray-50 font-sans">
         <div className="flex justify-center">
           <div className="w-full max-w-md bg-white p-6 border rounded-lg shadow-md text-black mt-16">
