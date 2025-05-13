@@ -50,100 +50,81 @@ export default function FormPage() {
     <main>
       <button onClick={signOut}>Sign out</button>
       <div className="min-h-screen bg-gray-50 font-sans">
-      <div className="flex justify-center">
-        <div className="w-full max-w-md bg-white p-6 border rounded-lg shadow-md text-black mt-16">
-          <h2 className="text-xl font-semibold text-center mb-4">Create your investment profile</h2>
+        <div className="flex justify-center">
+          <div className="w-full max-w-md bg-white p-6 border rounded-lg shadow-md text-black mt-16">
+            <h2 className="text-xl font-semibold text-center mb-4">Create your investment profile</h2>
 
-          {step === 1 && (
-            <>
-              <label className="block mb-2">Username</label>
-              <input name="username" value={formData.username} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
-              <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
-            </>
-          )}
+            {step === 1 && (
+              <>
+                <div>
+                  <label className="block mb-2">Username</label>
+                  <input name="username" value={formData.username} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
+                </div>
+                <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
+              </>
+            )}
 
           {step === 2 && (
             <>
-            <label className="block mb-2">Age Group</label>
-            <select
-                name="Age Group"
-                value={formData["Age Group"]}
-                onChange={handleChange}
-                className="w-full mb-4 p-2 border rounded"
-                >
-                <option value="">-- Please select an option --</option>
-                <option value="1">18-24</option>
-                <option value="2">25-34</option>
-                <option value="3">35-44</option>
-                <option value="4">45-54</option>
-                <option value="5">55-64</option>
-                <option value="6">65+</option>
-            </select>
-            <label className="block mb-2">Ethnicity</label>
-            <select
-                name="Ethnicity"
-                value={formData["Ethnicity"]}
-                onChange={handleChange}
-                className="w-full mb-4 p-2 border rounded"
-                >
-                <option value="">-- Please select an option --</option>
-                <option value="1">White non-Hispanic</option>
-                <option value="2">Non-White</option>
-            </select>              
-            <label className="block mb-2">Highest level of education completed</label>
-            <select
-                name="Education Level"
-                value={formData["Education Level"]}
-                onChange={handleChange}
-                className="w-full mb-4 p-2 border rounded"
-                >
-                <option value="">-- Please select an option --</option>
-                <option value="1">Did not complete High school</option>
-                <option value="2">High school diploma</option>
-                <option value="3">GED</option>
-                <option value="4">Some college</option>
-                <option value="5">Associate's degree</option>
-                <option value="6">Bachelor's degree</option>
-                <option value="7">Post graduate degree</option>
-            </select>              
-            <label className="block mb-2">Marital Status</label>
-            <select
-                name="Marital Status"
-                value={formData["Marital Status"]}
-                onChange={handleChange}
-                className="w-full mb-4 p-2 border rounded"
-                >
-                <option value="">-- Please select an option --</option>
-                <option value="1">Married</option>
-                <option value="2">Single</option>
-                <option value="3">Separated</option>
-                <option value="4">Divorced</option>
-                <option value="5">Widowed/widower</option>
-                <option value="99">Prefer not to say</option>
-            </select>   
-            <label className="block mb-2">Number of financially dependent children</label>
-            <select
-                name="Financially dependent children"
-                value={formData["Financially dependent children"]}
-                onChange={handleChange}
-                className="w-full mb-4 p-2 border rounded"
-                >
-                <option value="">-- Please select an option --</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4 or more</option>
-                <option value="5">No financially dependent children</option>
-                <option value="6">Do not have any children</option>
-                <option value="99">Prefer not to say</option>
-            </select>  
-            
+              <div>
+                <label className="block mb-2">Age Group</label>
+                <select name="Age Group" value={formData["Age Group"]} onChange={handleChange} className="w-full mb-4 p-2 border rounded">
+                  <option value="">-- Please select an option --</option>
+                  <option value="1">18-24</option>
+                  <option value="2">25-34</option>
+                  <option value="3">35-44</option>
+                  <option value="4">45-54</option>
+                  <option value="5">55-64</option>
+                  <option value="6">65+</option>
+                </select>
+                <label className="block mb-2">Ethnicity</label>
+                <select name="Ethnicity" value={formData["Ethnicity"]} onChange={handleChange} className="w-full mb-4 p-2 border rounded">
+                  <option value="">-- Please select an option --</option>
+                  <option value="1">White non-Hispanic</option>
+                  <option value="2">Non-White</option>
+                </select>              
+                <label className="block mb-2">Highest level of education completed</label>
+                <select name="Education Level" value={formData["Education Level"]} onChange={handleChange} className="w-full mb-4 p-2 border rounded">
+                  <option value="">-- Please select an option --</option>
+                  <option value="1">Did not complete High school</option>
+                  <option value="2">High school diploma</option>
+                  <option value="3">GED</option>
+                  <option value="4">Some college</option>
+                  <option value="5">Associate's degree</option>
+                  <option value="6">Bachelor's degree</option>
+                  <option value="7">Post graduate degree</option>
+                </select>              
+                <label className="block mb-2">Marital Status</label>
+                <select name="Marital Status" value={formData["Marital Status"]} onChange={handleChange} className="w-full mb-4 p-2 border rounded">
+                  <option value="">-- Please select an option --</option>
+                  <option value="1">Married</option>
+                  <option value="2">Single</option>
+                  <option value="3">Separated</option>
+                  <option value="4">Divorced</option>
+                  <option value="5">Widowed/widower</option>
+                  <option value="99">Prefer not to say</option>
+                </select>   
+                <label className="block mb-2">Number of financially dependent children</label>
+                <select name="Financially dependent children" value={formData["Financially dependent children"]} onChange={handleChange} className="w-full mb-4 p-2 border rounded">
+                  <option value="">-- Please select an option --</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4 or more</option>
+                  <option value="5">No financially dependent children</option>
+                  <option value="6">Do not have any children</option>
+                  <option value="99">Prefer not to say</option>
+                </select>  
+            </div>
+            <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Back</button>
+  
             <button onClick={() => setStep(3)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
 
             </>
           )}
           {step === 3 && (
             <>
+            <div>
               <label className="block mb-2">Approximate annual household income</label>
             <select
                 name="Annual Household Income"
@@ -226,12 +207,15 @@ export default function FormPage() {
                 <option value="10">10 - Extremely Willing</option>
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
-            </select>
+              </select>
+              </div>
+              <button onClick={() => setStep(3)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Back</button>
               <button onClick={() => setStep(4)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
             </>
           )}  
           {step === 4 && (
             <>
+            <div>
               <label className="block mb-2">Do you have a checking account?</label>
             <select
                 name="Account ownership check"
@@ -309,12 +293,16 @@ export default function FormPage() {
                 <option value="2">No</option>
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
-            </select>   
+            </select>
+            </div>   
+              <button onClick={() => setStep(4)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Back</button>
+
               <button onClick={() => setStep(5)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
             </>
           )}  
           {step === 5 && (
             <>
+            <div>
               <label className="block mb-2">Satisfaction with current personal financial condition</label>
             <select
                 name="Current financial condition satisfaction"
@@ -388,7 +376,10 @@ export default function FormPage() {
                 <option value="7">7 - Very High</option>
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
-            </select>   
+            </select>  
+            </div> 
+            <button onClick={() => setStep(5)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Back</button>
+
             <button /*onClick={handleSubmit}*/className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
                 Submit
             </button>
