@@ -2,13 +2,14 @@
 import Link from 'next/link';
 import { Amplify } from 'aws-amplify';
 import React from 'react';
-import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
+import {useAuthenticator } from "@aws-amplify/ui-react";
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 
 export default function Navbar() {
   const { signOut } = useAuthenticator();
+  //const { user, signOut } = useAuthenticator((context) => [context.user]);
 
   return (
     <nav >
