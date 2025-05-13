@@ -48,24 +48,12 @@ export default function FormPage() {
 
   return (
     <main>
-      <div className="min-h-screen bg-gray-50 font-sans">
+          <div className="min-h-screen bg-gray-50 font-sans">
       <div className="flex justify-center">
         <div className="w-full max-w-md bg-white p-6 border rounded-lg shadow-md text-black mt-16">
           <h2 className="text-xl font-semibold text-center mb-4">Create your investment profile</h2>
 
           {step === 1 && (
-            <>
-              <label className="block mb-2">Email</label>
-              <input name="email" value={formData.email} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
-              <label className="block mb-2">Username</label>
-              <input name="username" value={formData.username} onChange={handleChange} className="w-full mb-4 p-2 border rounded" />
-              <label className="block mb-2">Password</label>
-              <input name="password" type="password" value={formData.password} onChange={handleChange} className="w-full mb-6 p-2 border rounded" />
-              <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
-            </>
-          )}
-
-          {step === 2 && (
             <>
             <label className="block mb-2">Age Group</label>
             <select
@@ -141,11 +129,11 @@ export default function FormPage() {
                 <option value="99">Prefer not to say</option>
             </select>  
             
-            <button onClick={() => setStep(3)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
+            <button onClick={() => setStep(2)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
 
             </>
           )}
-          {step === 3 && (
+          {step === 2 && (
             <>
               <label className="block mb-2">Approximate annual household income</label>
             <select
@@ -230,10 +218,10 @@ export default function FormPage() {
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
             </select>
-              <button onClick={() => setStep(4)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
+              <button onClick={() => setStep(3)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
             </>
           )}  
-          {step === 4 && (
+          {step === 3 && (
             <>
               <label className="block mb-2">Do you have a checking account?</label>
             <select
@@ -313,10 +301,10 @@ export default function FormPage() {
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
             </select>   
-              <button onClick={() => setStep(5)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
+              <button onClick={() => setStep(4)} className="w-full bg-gray-700 text-white py-2 rounded hover:bg-black">Next</button>
             </>
           )}  
-          {step === 5 && (
+          {step === 4 && (
             <>
               <label className="block mb-2">Satisfaction with current personal financial condition</label>
             <select
@@ -391,8 +379,8 @@ export default function FormPage() {
                 <option value="7">7 - Very High</option>
                 <option value="98">Don't know</option>
                 <option value="99">Prefer not to say</option>
-            </select>
-            <button onClick={() => window.location.href = '/dashboard'} className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"/*onClick={handleSubmit}*/>
+            </select>   
+            <button onClick={() => window.location.href = '/dashboard'}/*onClick={handleSubmit}*/>
                 Submit
             </button>
               </>
