@@ -363,7 +363,7 @@ export default function FormPage() {
             </select>  
             </div> 
 
-            <button /*onClick={() => window.location.href = '/dashboard'}/*onClick={handleSubmit}*/>
+            <button onClick={() => window.location.href = '/dashboard'}/*onClick={handleSubmit}*/>
                 Submit
             </button>
               </>
