@@ -1,10 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Amplify } from 'aws-amplify';
-import React from 'react';
 import {useAuthenticator } from "@aws-amplify/ui-react";
-import awsExports from './aws-exports';
-Amplify.configure(awsExports);
 
 
 export default function Navbar() {
